@@ -1,5 +1,6 @@
-git+https://github.com/kokarare1212/librespot-python
+-e git+https://github.com/kokarare1212/librespot-python
 music_tag
 pydub
 rich
+requests
 yaspin

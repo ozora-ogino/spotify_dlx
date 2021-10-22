@@ -22,8 +22,29 @@ def read(*paths, **kwargs):
     return content
 
 
+def take_package_name(name):
+    if name.startswith("-e"):
+        return name[name.find("=") + 1 : name.rfind("-")]
+    else:
+        return name.strip()
+
+
 def read_requirements(path):
     return [line.strip() for line in read(path).split("\n") if not line.startswith(('"', "#", "-", "git+"))]
+
+
+# def load_requires_from_file(filepath):
+#     with open(filepath) as fp:
+#         return [take_package_name(pkg_name) for pkg_name in fp.readlines()]
+
+
+def load_links_from_file(filepath):
+    res = []
+    with open(filepath) as fp:
+        for pkg_name in fp.readlines():
+            if pkg_name.startswith("-e"):
+                res.append(pkg_name.split(" ")[1])
+    return res
 
 
 setup(
@@ -36,6 +57,7 @@ setup(
     author="ozora-ogino",
     packages=find_packages(exclude=["tests", ".github"]),
     install_requires=read_requirements("requirements.txt"),
+    dependency_links=load_links_from_file("requirements.txt"),
     entry_points={"console_scripts": ["project_name = project_name.__main__:main"]},
     extras_require={"test": read_requirements("requirements-test.txt")},
 )

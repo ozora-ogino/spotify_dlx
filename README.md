@@ -55,6 +55,18 @@ Then cool UI will appear.
 
 ## Installation
 
+### requirements
+
+`ffmpeg` and `librespot` are required.
+
+Run following commands.
+
+```bash
+$ pip install git+https://github.com/kokarare1212/librespot-python
+
+$ brew install ffmpeg # Mac
+```
+
 ### pip
 
 ```bash
