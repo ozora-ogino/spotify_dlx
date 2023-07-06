@@ -133,7 +133,7 @@ class SpotifyDLXClient(object):
             target=url,
             uri_pattern=r"^spotify:episode:(?P<EpisodeID>[0-9a-zA-Z]{22})$",
             url_pattern=r"^(https?://)?open\.spotify\.com/episode/(?P<EpisodeID>[0-9a-zA-Z]{22})(\?si=.+?)?$",
-            groupkey="PlaylistID",
+            groupkey="EpisodeID",
         )
 
         if track_url:
