@@ -32,7 +32,7 @@ def _login(client: SpotifyDLXClient) -> None:
         print("Credentials are loaded from env vars:sparkles:")
         username = os.getenv("SPOTIFY_USERNAME")
         password = os.getenv("SPOTIFY_PASSWORD")
-        client.login(usename=username, password=password)
+        client.login(username=username, password=password)
 
     # Ask user to type username and password.
     else:

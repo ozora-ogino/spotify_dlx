@@ -48,7 +48,7 @@ Then cool UI will appear.
 ```python
 >>> from spotify_dlx import SpotifyDLXClient
 >>> client = SpotifyDLXClient()
->>> client.login(usename="USERNAME", password="PASSWORD")
+>>> client.login(username="USERNAME", password="PASSWORD")
 >>> client.search("Billie Eilish")
 ```
 
