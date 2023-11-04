@@ -44,8 +44,8 @@ def _login(client: SpotifyDLXClient) -> None:
 
 def _main():
     parser = ArgumentParser()
-    parser.add_argument("--root", default="~/spotify_dlx/songs/")
-    parser.add_argument("--root-podcast", default="~/spotify_dlx/podcasts/")
+    parser.add_argument("--root", default=os.path.expanduser("~/spotify_dlx/songs/"))
+    parser.add_argument("--root-podcast", default=os.path.expanduser("~/spotify_dlx/podcasts/"))
     parser.add_argument("--url")
     parser.add_argument("--disable-skip", default=False, action="store_true")
     parser.add_argument("--liked", default=False, action="store_true")
